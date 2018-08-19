@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" id='a3'>
+<head>
+
+
+	<!--  Start header  -->
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<title>GEHU PDP</title>
+	<link rel='icon' type='image/png' href='img/logo/gehu_logo.png' />
+	<!--  End header  -->
+
+
+	<!--  Start Css  -->
+	<link rel="stylesheet" href="fonts/ionicons-2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+	<link href="css-plugins/google-fonts.css" rel="stylesheet">
+	<link rel="stylesheet" href="css-plugins/include.css">
+	<link rel="stylesheet" href="css-default/style/style.css">
+	<!--   End Css   -->
+
+
+</head>
+<body>
+
+
+	<!--  Start Preloader Section  -->
+	<section class="el-preloader style-default">
+		<h2 class='display-none'>Display none</h2>
+		<div class="preloader-holder">
+			<div class="circle-holder">
+				<div id="circle-1" class="preloader-circle"></div>
+				<div id="circle-2" class="preloader-circle"></div>
+				<div id="circle-3" class="preloader-circle"></div>
+			</div>
+		</div>
+	</section>
+	<!--   End Preloaser Section  -->
+
+
+	<!--  Start Background Section  -->
+	<section class="el-bg-block resp-bg" style="background-image: url(img/background/bg-firework.jpg);">
+		<h2 class='display-none'>Display none</h2>
+		<div class="bg-block-holder z-index-10" id='bg-block-holder'></div>
+		<div class="youtube-player z-index-15"></div>
+		<div class="overlay-color-bg opacity-3 z-index-20" ></div>
+		<div class="el-bg-block z-index-25" id="el-bg-block">
+			<canvas id='canvas-animation'></canvas>
+		</div>
+		<div class="overlay-color-bg opacity-0 z-index-30"></div>
+	</section>
+	<!--   End Background Section   -->
+	
+	
+	<!--  Start Main Content  -->
+	<main id='canvas-move-area'> 
+
+		<!--  Start Home Section  -->
+		<section class="el-main-content fullscreen-section scale-in-rotate" id='home-page'>
+			<div class="fullscreen-section-holder el-scroll-holder">
+				<div class="vert-helper"></div><!--
+			 --><div class="content-holder  for-vert-align">
+					<div class="top-text">
+
+						<!--  Logo  -->
+						<div class="logo-block duration-12 translate-from-bottom-15  translate-0">
+							<a class="logo" href='#'><img src="img/logo/gehu_logo.png" alt=""></a>
+						</div>
+
+						<!--  Main Big Text  -->
+						<h1 class="big-text duration-12 translate-from-bottom-13 translate-0"><span id="typed-element">WE WILL COMING SOON!</span></h1>
+
+					</div>
+
+					<!--  Counter  -->
+					<div class="counter duration-12 translate-from-bottom-9 translate-0 ">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="days col-6 col-sm-6 col-md-3">
+									<span class="number">{dnnn}</span>
+									<span class="text">{dl}</span>
+								</div>
+								<div class="hours col-6 col-sm-6 col-md-3">
+									<span class="number">{hnn}</span>
+									<span class="text">{hl}</span>
+								</div>
+								<div class="minutes col-6 col-sm-6 col-md-3">
+									<span class="number">{mnn}</span>
+									<span class="text">{ml}</span>
+								</div>
+								<div class="seconds col-6 col-sm-6 col-md-3">
+									<span class="number theme-color">{snn}</span>
+									<span class="text theme-color">{sl}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--  Social Block -->
+					<div class="social-block duration-12 translate-from-bottom-6 translate-0">
+						<ul class="social-list clearfix">
+							<li><a href="https://twitter.com/graphicerahill1" class="ion-social-twitter"></a></li>
+							<li><a href="https://www.facebook.com/gehu.official/" class="ion-social-facebook"></a></li>
+							<li><a href="https://www.linkedin.com/company/graphic-era-hilluniversity" class="ion-social-linkedin"></a></li>
+							<li><a href="https://www.instagram.com/graphicerahilluniversity/" class="ion-social-instagram"></a></li>
+							<li><a href="https://www.youtube.com/GEHUDehradun" class="ion-social-youtube"></a></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+		<!--  End Home Section  -->
+	</main>
+	<!--   End Main Content   -->
+	<!--  Start Scripts   -->
+	<script src='js/mobile-detect/mobile-detect.js'></script>
+	<script src='js/jquery/jquery.min.js'></script>
+	<script src='js/scrollTo/jquery.scrollTo.js'></script>
+	<script src='js/popper/popper.min.js'></script>
+	<script src='js/bootstrap/bootstrap.min.js'></script>
+	<script src='js/magnific-popup/jquery.magnific-popup.min.js'></script>
+	<script src='js/youtube-bg/jquery.mb.YTPlayer.js'></script>
+	<script src='js/vegas-slideshow/vegas.min.js'></script>
+	<script src='js/owl-carousel/owl.carousel.min.js'></script>
+	<script src='js/countdown/countdown.js'></script>
+	<script src='js/typed/typed.min.js'></script>
+	<script src='js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js'></script>
+	<script src='js/canvas/firework.js'></script>
+	<script>
+		
+		/*=============================
+		Start Main Settings
+		=============================*/
+		var canvasAnimation     = [true, 'firework'], 
+			animationInMobile   = false, 
+			preloaderFadeOut    = 1000,
+			targetDate          = "08/26/2018 00:00:00",
+			youtubeBg           = false,
+			youtubeProperty     = {videoURL:"", containment:'#bg-block-holder', quality:'hd720', showControls:false, autoPlay:true, mute:true, startAt:0, opacity:1},
+			videoBgMobile       = [false, 'slideshow'],
+			globalSlideshow     = [false, [{src: 'img/slideshow/slide-1.jpg'}, {src: 'img/slideshow/slide-2.jpg'}]],
+			typed               = [false, ['WE WILL COMING SOON!','COMING SOON!']],
+			typedInMobile       = [false, 'WE WILL COMING SOON!'];
+		/*=============================
+		End Main Settings
+		=============================*/
+		
+	</script>
+	<script src='js/main/main.js'></script>
+	<!--   End Scripts   -->
+
+</body></html>
+
